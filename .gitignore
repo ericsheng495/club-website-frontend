@@ -70,3 +70,4 @@ public-admin
 .idea/*
 
 storage/uploads/*
+/bin/

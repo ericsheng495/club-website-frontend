@@ -77,5 +77,9 @@ export class TutorDetailComponent extends TutorComponent implements OnInit, Afte
 
   ngAfterViewInit() {
 
+    //Load first reference, if not others activated
+    if (!this.isChildRouterActivated()) {
+      this.router.navigate(['./enrollment/list', {}], {relativeTo: this.route, queryParamsHandling: 'preserve',});
+    }
   }
 }

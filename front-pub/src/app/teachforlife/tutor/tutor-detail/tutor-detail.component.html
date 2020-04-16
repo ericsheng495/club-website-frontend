@@ -94,8 +94,17 @@
 		</div>
 	</div>
 	<div *ngIf="!options['disablePipeline']">
+    <br/>
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary" routerLink="/teach4life/enroll" [queryParams]="{tutor: detail['_id']}">I'm Interested in This Tutor</button>
+    </div>
 </div>
 	<div *ngIf="!options['disableRefLink']">
+    <br/>
+    <ul class="nav nav-tabs">
+        
+    </ul>
+    <router-outlet></router-outlet>
 </div>
 </div>
 

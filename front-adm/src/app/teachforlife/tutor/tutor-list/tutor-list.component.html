@@ -24,7 +24,7 @@
 	              <input type="search" class="form-control border border-secondary" id="tutorTextSearch" 
 						#tutorTextSearch [(ngModel)]="searchText"
 						(keydown.enter)="$event.target.blur();searchList();false"
-					    placeholder="Search for name, introduction"> 
+					    placeholder="Search for name, introduction, specificSubjects"> 
 				  <div *ngIf="searchText" class="input-group-append icon-clear-inside">
 					<span >
 					    <i class="fas fa-times-circle" (click)="onSearchTextClear()" title="Clear"></i>
@@ -117,6 +117,8 @@
 							<a class="dropdown-item pointer" (click)="setListSortAndRefresh('name', 'Name', 'desc')">Name<i class="fas fa-arrow-down"></i></a>
 							<a class="dropdown-item pointer" (click)="setListSortAndRefresh('introduction', 'Introduction', 'asc')">Introduction<i class="fas fa-arrow-up"></i></a>
 							<a class="dropdown-item pointer" (click)="setListSortAndRefresh('introduction', 'Introduction', 'desc')">Introduction<i class="fas fa-arrow-down"></i></a>
+							<a class="dropdown-item pointer" (click)="setListSortAndRefresh('specificSubjects', 'Tutoring Subjects', 'asc')">SpecificSubjects<i class="fas fa-arrow-up"></i></a>
+							<a class="dropdown-item pointer" (click)="setListSortAndRefresh('specificSubjects', 'Tutoring Subjects', 'desc')">SpecificSubjects<i class="fas fa-arrow-down"></i></a>
 						</div>
 					</div>
 			</div>
@@ -219,6 +221,13 @@
                         
 </div>
           </div>
+          <div *ngIf="detail['specificSubjects']" class="d-flex flex-wrap">
+            <div class=""><label>Tutoring Subjects:</label></div>
+            <div class="ml-3">
+                    <div [innerHTML]="detail['specificSubjects']"></div>
+                        
+</div>
+          </div>
       </div>
 
 				</div>
@@ -266,6 +275,14 @@
 
           </div>
         </div>
+        <div *ngIf="detail['specificSubjects']" class="mr-3 d-inline-flex flex-wrap">
+          <div><label>Tutoring Subjects:</label></div>
+          <div class="ml-3">
+                    <div [innerHTML]="detail['specificSubjects']"></div>
+                        
+
+          </div>
+        </div>
       </div>
 
 				</div>
@@ -306,7 +323,14 @@
 					</span>
 				</th>
 				<th scope="col">Photo</th>
-<th scope="col" style="width:9.8rem;"></th>
+
+				<th class="pointer" scope="col" (click)="toggleListSort('specificSubjects', 'Tutoring Subjects')">
+					Tutoring Subjects
+					<span *ngIf="listSortField === 'specificSubjects'">
+						<i *ngIf="listSortOrder === 'asc'" class="fas fa-arrow-up th-sort-arrow"></i>
+						<i *ngIf="listSortOrder === 'desc'" class="fas fa-arrow-down th-sort-arrow"></i>
+					</span>
+				</th><th scope="col" style="width:9.8rem;"></th>
 	    	</tr>
 	    </thead>
 	    <tbody>
@@ -329,6 +353,12 @@
 	            <td (click)="onDetailLinkClicked(detail['_id'])"  class="pointer">
 	            	
                     <lib-mdds-file-display [downloadUrl]="detail['photo']" [isLarge]="false" [aspectRatio]=""></lib-mdds-file-display>
+
+	            </td>
+	            <td (click)="onDetailLinkClicked(detail['_id'])"  class="pointer">
+	            	
+                    <div [innerHTML]="detail['specificSubjects']"></div>
+                        
 
 	            </td>
 	            <td>

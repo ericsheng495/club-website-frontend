@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { MembersComponent } from './members/members.component';
 import { Teach4lifeComponent } from './teach4life/teach4life.component';
+import { SignUpComponent} from './teach4life/enroll/sign-up.component';
 
 const routes: Routes = [
     { path: '', component: HomepageComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent},
     { path: 'members', component: MembersComponent},
     { path: 'teach4life', component: Teach4lifeComponent},
+    { path: 'teach4life/enroll', component: SignUpComponent},
 ];
 
 @NgModule({

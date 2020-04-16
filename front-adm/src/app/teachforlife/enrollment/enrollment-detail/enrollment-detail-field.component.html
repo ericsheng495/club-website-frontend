@@ -1,0 +1,40 @@
+
+
+		<div *ngIf="detail && showFields.includes('name')">
+                    {{detail['name']}}
+
+		</div>
+		<div *ngIf="detail && showFields.includes('email')">
+                    {{detail['email']}}
+
+		</div>
+		<div *ngIf="detail && showFields.includes('phoneNumber')">
+                    {{detail['phoneNumber']}}
+
+		</div>
+		<div *ngIf="detail && showFields.includes('grade')">{{detail['grade']}} 
+
+		</div>
+		<div *ngIf="detail && showFields.includes('status')">
+                    {{detail['status']}}
+
+		</div>
+		<div *ngIf="detail && showFields.includes('notes')">
+                    <div [innerHTML]="detail['notes']"></div>
+                        
+
+		</div>
+		<div *ngIf="detail && showFields.includes('adminNotes')">
+                    <div [innerHTML]="detail['adminNotes']"></div>
+                        
+
+		</div>
+		<div *ngIf="detail && showFields.includes('tutor')">
+               	  <a routerLink="."  (click)="onDisplayRefClicked('tutor', detail['tutor'], $event)">
+	            	{{detail['tutor']?detail['tutor']['value']:""}}
+	              </a>
+
+		</div>
+		<div *ngIf="detail && showFields.includes('createdAt')">  {{detail['createdAt']?detail['createdAt']['value']:""}}
+
+		</div>

@@ -15,7 +15,7 @@ import { MddsCoreModule } from '@hicoder/angular-core';
 
 import { TeachforlifeRoutingModule } from './teachforlife-routing.module';
 import { TeachforlifeComponent } from './teachforlife.component';
-
+import { TeachforlifeRefSelectDirective } from './teachforlife.component';
 
 import { Teachforlife_SERVER_ROOT_URI } from './teachforlife.tokens';
 import { teachforlife_server_root_uri } from '../teachforlife.conf';
@@ -35,6 +35,21 @@ import { TutorService } from './tutor/tutor.service';
 
 
 
+
+import { EnrollmentEditComponent } from './enrollment/enrollment-edit/enrollment-edit.component';
+
+import { EnrollmentService } from './enrollment/enrollment.service';
+
+
+import { TutorListSelectComponent } from './tutor/tutor-list/tutor-list-select.component';
+
+import { TutorDetailPopComponent } from './tutor/tutor-detail/tutor-detail-pop.component';
+import { TutorDetailSelComponent } from './tutor/tutor-detail/tutor-detail-sel.component';
+
+
+
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -48,7 +63,7 @@ import { TutorService } from './tutor/tutor.service';
   ],
   declarations: [
     TeachforlifeComponent,
-    
+    TeachforlifeRefSelectDirective,
 
     TutorListComponent,
 
@@ -57,8 +72,21 @@ import { TutorService } from './tutor/tutor.service';
     TutorDetailFieldComponent,
     
 
+    
+
+    
+
+    
+    EnrollmentEditComponent,
 
 
+    TutorListSelectComponent,
+    
+    TutorDetailPopComponent,
+    TutorDetailSelComponent,
+
+    
+    
 
 
 
@@ -74,8 +102,21 @@ import { TutorService } from './tutor/tutor.service';
     TutorDetailFieldComponent,
     
 
+    
+
+    
+
+    
+    EnrollmentEditComponent,
 
 
+    TutorListSelectComponent,
+    
+    TutorDetailPopComponent,
+    TutorDetailSelComponent,
+
+    
+    
 
 
 
@@ -86,8 +127,13 @@ import { TutorService } from './tutor/tutor.service';
 
 
     TutorService,
+    EnrollmentService,
   ],
   entryComponents: [
+    TutorListSelectComponent,
+    TutorDetailPopComponent,
+    TutorDetailSelComponent,
+    EnrollmentEditComponent,
   ]
 })
 export class TeachforlifeModule { }

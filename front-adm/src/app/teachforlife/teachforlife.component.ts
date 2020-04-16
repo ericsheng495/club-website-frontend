@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 
+import { ViewContainerRef,  Directive} from '@angular/core';
+@Directive({
+  selector: '[teachforlife-ref-select]',
+})
+export class TeachforlifeRefSelectDirective {
+  constructor(public viewContainerRef: ViewContainerRef) { }
+}
+
 @Component({
   selector: 'app-teachforlife',
   templateUrl: './teachforlife.component.html',

@@ -39,6 +39,7 @@ export class TutorListComponent extends TutorComponent implements OnInit {
           this.stringFields.push('name');
           this.stringFields.push('introduction');
           this.stringFields.push('photo');
+          this.stringFields.push('specificSubjects');
 
 
 
@@ -46,7 +47,7 @@ export class TutorListComponent extends TutorComponent implements OnInit {
 
 
 
-          this.textareaFields = ['introduction', ];
+          this.textareaFields = ['introduction', 'specificSubjects', ];
 
 
           this.listViewFilter = 'grid';

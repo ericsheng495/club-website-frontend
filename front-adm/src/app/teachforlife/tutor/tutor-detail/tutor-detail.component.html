@@ -96,6 +96,14 @@
 	<div *ngIf="!options['disablePipeline']">
 </div>
 	<div *ngIf="!options['disableRefLink']">
+    <br/>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a [routerLink]="['./enrollment/list']"
+                    class="nav-link" routerLinkActive="active">Sign Up</a>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
 </div>
 </div>
 

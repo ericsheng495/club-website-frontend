@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,12 @@ import { PublicinfoModule } from './publicinfo/publicinfo.module';
 import { TeachforlifeModule } from './teachforlife/teachforlife.module';
 import { Teach4lifeComponent } from './teach4life/teach4life.component';
 
+import { RouteReuseStrategy } from '@angular/router';
+import { AppRouteReuseStrategy } from './app-routing-reuse';
+import { EnrollComponent } from './teach4life/enroll/enroll.component';
+import { SignUpComponent } from './teach4life/enroll/sign-up.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +36,13 @@ import { Teach4lifeComponent } from './teach4life/teach4life.component';
     AboutComponent,
     MembersComponent,
     Teach4lifeComponent,
+    EnrollComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
 
     AuthenticationModule,
     PublicinfoModule,
@@ -46,6 +56,7 @@ import { Teach4lifeComponent } from './teach4life/teach4life.component';
     { provide: AUTHENTICATION_LOGIN_PIPELINE, useValue: authentication_login_pipeline },
     { provide: FILE_UPLOAD_URI, useValue: file_upload_uri },
     { provide: FILE_DOWNLOAD_URI, useValue: file_download_uri },
+    { provide: RouteReuseStrategy, useClass: AppRouteReuseStrategy },
   ],
   bootstrap: [AppComponent],
 })

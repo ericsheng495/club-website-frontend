@@ -8,12 +8,15 @@ const itemCamelName = 'tutors';
 
 export { ViewType };
 
+import { ViewChild } from '@angular/core';
 
+import { ElementRef } from '@angular/core';
 
 
 export class TutorComponent extends MddsBaseComponent {
 
 
+    @ViewChild('TeachforlifeModal', {static: true}) public focusEl: ElementRef;
 
     constructor(
       

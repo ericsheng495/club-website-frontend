@@ -13,27 +13,29 @@
     padding-left: 0;
 }
 
-.hcc-row1 {}
+.hcc-row1 {
+    margin-top: 20px;
+}
 
 .hcc-row1>div {
     position: relative;
     overflow: hidden;
-    height: 450px;
+    height: 350px;
 }
 
 .mission {
     background-color: rgb(63, 113, 162);
-    padding-top: 80px!important;
+    padding-top: 60px!important;
     color: white;
     padding: 15px;
     text-align: center;
-    font-size: 36px;
+    font-size: 1.25rem;
 }
 
 .mission-title {
     text-align: center;
     background-color: rgb(63, 113, 162);
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .picture-container {
@@ -50,11 +52,11 @@
 #join {
     background-color: rgb(56, 109, 189);
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 35px;
+    font-size: 1.5rem;
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -62,12 +64,14 @@
 .subtitle {
     text-align: center;
     color: rgb(56, 109, 189);
-    font-size: 70px;
-    margin-top: 3rem;
+    font-size: 3rem;
+    margin-top: 1.5rem;
 }
 
 .team-row {
-    margin-top: 3rem;
+    margin-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 .team {
@@ -99,4 +103,11 @@
 .members i {
     margin: 40px auto 40px auto;
     width: 18rem;
+}
+
+@media screen and (max-width: 576px) {
+    .team-row {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
 }

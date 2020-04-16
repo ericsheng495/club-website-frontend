@@ -8,12 +8,15 @@ const itemCamelName = 'tutors';
 
 export { ViewType };
 
+import { ViewChild } from '@angular/core';
 
+import { ElementRef } from '@angular/core';
 
 
 export class TutorComponent extends MddsBaseComponent {
 
 
+    @ViewChild('TeachforlifeModal', {static: true}) public focusEl: ElementRef;
 
     constructor(
       
@@ -28,7 +31,7 @@ export class TutorComponent extends MddsBaseComponent {
 
         
         this.briefFieldsInfo = [];
-        this.briefFieldsInfo.push(['name', 'Name']);this.briefFieldsInfo.push(['introduction', 'Introduction']);this.briefFieldsInfo.push(['photo', 'Photo']);
+        this.briefFieldsInfo.push(['name', 'Name']);this.briefFieldsInfo.push(['introduction', 'Introduction']);this.briefFieldsInfo.push(['photo', 'Photo']);this.briefFieldsInfo.push(['specificSubjects', 'Tutoring Subjects']);
 
 
 
